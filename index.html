@@ -16,14 +16,11 @@
           fetch("raw.json")
             .then((resp) => resp.json())
             .then((resp) => {
-              list.insertAdjacentElement(
-                "beforeend",
-                resp.data
-                  .map((x) => {
-                    return `<li>${x.name}</li>`;
-                  })
-                  .join("")
-              );
+              list.innerHTML = resp.data
+                .map((x) => {
+                  return `<li>${x.name}</li>`;
+                })
+                .join("");
             });
         },
         false
