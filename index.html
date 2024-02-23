@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>test</title>
+  </head>
+  <body>
+    <ul id="list"></ul>
+
+    <script>
+      const list = document.getElementById("list");
+      document.addEventListener(
+        "DOMContentLoaded",
+        () => {
+          fetch("/raw.json")
+            .then((resp) => resp.json())
+            .then((resp) => {
+              list.insertAdjacentElement(
+                "beforeend",
+                resp.data
+                  .map((x) => {
+                    return `<li>${x.name}</li>`;
+                  })
+                  .join("")
+              );
+            });
+        },
+        false
+      );
+    </script>
+  </body>
+</html>
