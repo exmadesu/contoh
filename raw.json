@@ -1,1 +1,14 @@
-{}
+{
+  "success": true,
+  "data": [
+    {
+      "name": "a"
+    },
+    {
+      "name": "b"
+    },
+    {
+      "name": "c"
+    }
+  ]
+}
