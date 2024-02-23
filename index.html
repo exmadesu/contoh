@@ -13,7 +13,7 @@
       document.addEventListener(
         "DOMContentLoaded",
         () => {
-          fetch("/raw.json")
+          fetch("raw.json")
             .then((resp) => resp.json())
             .then((resp) => {
               list.insertAdjacentElement(
